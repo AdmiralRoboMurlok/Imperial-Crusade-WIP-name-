@@ -1,0 +1,9 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1735919574
+icon.svg::CompressedTexture2D::661588098365190172::1735653424::1735653613::1::::<><>::
+README.md::TextFile::-1::1735654922::0::1::::<><>::
+::res://Camera/::1735919536
+camera.gd::GDScript::-1::1735919536::0::1::::<>Node3D<>::
+camera.tscn::PackedScene::3759838451687463877::1735919536::0::1::::<><>::res://Camera/camera.gd
+::res://GDExtension/::1735653424
+::res://GDExtension/godot-cpp/::1735653424

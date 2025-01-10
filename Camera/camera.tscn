@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bttj8wof67wkj"]
+[gd_scene load_steps=6 format=3 uid="uid://bttj8wof67wkj"]
 
 [ext_resource type="Script" path="res://Camera/camera.gd" id="1_magah"]
+[ext_resource type="Script" path="res://units/placeholder/placeholder_unit_mv.gd" id="2_27ms6"]
+[ext_resource type="ArrayMesh" uid="uid://bpcvn3hvkgsjq" path="res://models/placeholders/amongus.tres" id="2_dh1ci"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_huf0m"]
 size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8101"]
+size = Vector3(1.37891, 2.49609, 1)
 
 [node name="World" type="Node3D"]
 
@@ -18,3 +23,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.527, 17.4745)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_huf0m")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.369119, 0.233745, 0.592441)
+script = ExtResource("2_27ms6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+layers = 2
+mesh = ExtResource("2_dh1ci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189453, 1.22191, 0)
+shape = SubResource("BoxShape3D_s8101")

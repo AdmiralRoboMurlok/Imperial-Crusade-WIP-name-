@@ -15,6 +15,10 @@ run/main_scene="res://Camera/camera.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UnitSelection="*res://UnitSelection/unit_selection.gd"
+
 [dotnet]
 
 project/assembly_name="Imperial_Crusade(WIP name)"

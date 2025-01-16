@@ -1,7 +1,10 @@
 extends CharacterBody3D
 
 const SPEED = 5.0;
-var Selected = true;
+var Selectable = true;
+var Selected = false;
+@export_range(1, 12, 1) var Team:int = 1;
+
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

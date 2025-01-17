@@ -1,16 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bttj8wof67wkj"]
+[gd_scene load_steps=5 format=3 uid="uid://bttj8wof67wkj"]
 
 [ext_resource type="Script" path="res://Camera/camera.gd" id="1_magah"]
-[ext_resource type="Script" path="res://units/placeholder/placeholder_unit_mv.gd" id="2_27ms6"]
-[ext_resource type="ArrayMesh" uid="uid://bpcvn3hvkgsjq" path="res://models/placeholders/amongus.tres" id="2_dh1ci"]
+[ext_resource type="Script" path="res://GameController/GameController.gd" id="1_qxeh2"]
+[ext_resource type="PackedScene" uid="uid://dtjl3t0s1618b" path="res://units/placeholder/TestUnit.tscn" id="3_4u4sc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_huf0m"]
 size = Vector2(20, 20)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_s8101"]
-size = Vector3(1.37891, 2.49609, 1)
-
 [node name="World" type="Node3D"]
+script = ExtResource("1_qxeh2")
 
 [node name="Camera" type="Node3D" parent="."]
 script = ExtResource("1_magah")
@@ -22,16 +20,8 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.527, 17.4745)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0933285, 0)
 mesh = SubResource("PlaneMesh_huf0m")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.369119, 0.233745, 0.592441)
-script = ExtResource("2_27ms6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-layers = 2
-mesh = ExtResource("2_dh1ci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189453, 1.22191, 0)
-shape = SubResource("BoxShape3D_s8101")
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_4u4sc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80485, 0.164345, -0.0882735)

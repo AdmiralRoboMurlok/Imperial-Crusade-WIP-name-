@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bpcvn3hvkgsjq" path="res://models/placeholders/amongus.tres" id="2_c7n2d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_776p5"]
-size = Vector3(1.3877, 2.52576, 1)
+size = Vector3(1.51465, 2.58759, 1.14362)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.369119, 0.233745, 0.592441)
@@ -14,8 +14,5 @@ script = ExtResource("1_65ah2")
 mesh = ExtResource("2_c7n2d")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185059, 1.23024, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121584, 1.26115, -0.0218811)
 shape = SubResource("BoxShape3D_776p5")
-
-[node name="RayCast3D" type="RayCast3D" parent="CollisionShape3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.189453, 0.0939986, 0)

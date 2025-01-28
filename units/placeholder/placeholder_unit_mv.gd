@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0;
 var Selectable = true;
-@export var Selected:bool = true;
+@export var Selected:bool = false;
 @export_range(1, 12, 1) var Team:int = 1;
 
 
@@ -24,3 +24,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 		move_and_slide()
+
+func _ready():
+	add_to_group("Units")

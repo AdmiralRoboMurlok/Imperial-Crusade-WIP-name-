@@ -25,8 +25,8 @@ project/assembly_name="Imperial_Crusade(WIP name)"
 
 [global_group]
 
-Units="Wszystkie jednostki które można kliknąć"
 Map="Mapy"
+units="Wszystkie jednostki które można kliknąć"
 
 [input]
 

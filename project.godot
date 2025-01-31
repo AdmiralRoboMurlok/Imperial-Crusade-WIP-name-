@@ -23,6 +23,11 @@ UnitSelection="*res://UnitSelection/UnitSelectionManager.gd"
 
 project/assembly_name="Imperial_Crusade(WIP name)"
 
+[global_group]
+
+Map="Mapy"
+units="Wszystkie jednostki które można kliknąć"
+
 [input]
 
 CameraForward={

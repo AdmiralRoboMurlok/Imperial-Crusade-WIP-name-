@@ -1,30 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://bttj8wof67wkj"]
+[gd_scene load_steps=8 format=3 uid="uid://bttj8wof67wkj"]
 
 [ext_resource type="Script" path="res://GameController/GameController.gd" id="1_dt6uk"]
 [ext_resource type="Script" path="res://Camera/camera.gd" id="1_magah"]
-[ext_resource type="PackedScene" uid="uid://dtjl3t0s1618b" path="res://units/placeholder/TestUnit.tscn" id="3_4u4sc"]
+[ext_resource type="PackedScene" uid="uid://b7r2oyox04wj3" path="res://units/placeholder/TestUnit.tscn" id="3_alqge"]
+
+[sub_resource type="Gradient" id="Gradient_uwh7s"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 0.192157)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wlji1"]
+gradient = SubResource("Gradient_uwh7s")
+width = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ko1li"]
+size = Vector3(50, 1, 35)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_huf0m"]
 size = Vector2(20, 20)
 
 [node name="World" type="Node3D"]
+
+[node name="PlayerInterface" type="Node2D" parent="."]
 script = ExtResource("1_dt6uk")
 
-[node name="Camera" type="Node3D" parent="."]
+[node name="SelectionBox" type="NinePatchRect" parent="PlayerInterface"]
+offset_right = 6.0
+offset_bottom = 6.0
+texture = SubResource("GradientTexture1D_wlji1")
+
+[node name="Camera" type="Node3D" parent="PlayerInterface"]
 script = ExtResource("1_magah")
 
-[node name="CameraSocket" type="Node3D" parent="Camera"]
+[node name="CameraSocket" type="Node3D" parent="PlayerInterface/Camera"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 8.38902, -19.4221)
 
-[node name="Camera3D" type="Camera3D" parent="Camera/CameraSocket"]
+[node name="Camera3D" type="Camera3D" parent="PlayerInterface/Camera/CameraSocket"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.527, 17.4745)
+
+[node name="VisibleUnitsArea3D" type="Area3D" parent="PlayerInterface/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerInterface/Camera/VisibleUnitsArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -7)
+shape = SubResource("BoxShape3D_ko1li")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["Map"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0933285, 0)
 mesh = SubResource("PlaneMesh_huf0m")
 
-[node name="CharacterBody3D" parent="." groups=["units"] instance=ExtResource("3_4u4sc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80485, 0.164345, -0.0882735)
+[node name="TestUnit" parent="." instance=ExtResource("3_alqge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50465, 0.247116, -1.07047)
 
-[node name="CharacterBody3D2" parent="." groups=["units"] instance=ExtResource("3_4u4sc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83025, 0.164345, -0.0882735)
+[node name="TestUnit2" parent="." instance=ExtResource("3_alqge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01797, 0.251304, -1.76188)

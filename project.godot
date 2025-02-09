@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-UnitSelection="*res://UnitSelection/UnitSelectionManager.gd"
+RaycastSytem="*res://RaycastSystem/RaycastSytem.gd"
 
 [dotnet]
 

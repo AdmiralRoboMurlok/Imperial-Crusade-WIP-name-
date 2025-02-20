@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7r2oyox04wj3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bpcvn3hvkgsjq" path="res://models/placeholders/amongus.tres" id="1_0jn3j"]
+[ext_resource type="Script" path="res://units/placeholder/placeholder_unit_mv.gd" id="1_cvvwp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an3ev"]
+size = Vector3(1.43274, 2.57199, 1.10962)
+
+[node name="TestUnit" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_cvvwp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = ExtResource("1_0jn3j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18158, 1.23654, 0.0032959)
+shape = SubResource("BoxShape3D_an3ev")

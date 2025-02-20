@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bttj8wof67wkj"]
+[gd_scene load_steps=10 format=3 uid="uid://bttj8wof67wkj"]
 
 [ext_resource type="Script" path="res://GameController/GameController.gd" id="1_dt6uk"]
 [ext_resource type="Script" path="res://Camera/camera.gd" id="1_magah"]
 [ext_resource type="PackedScene" uid="uid://b7r2oyox04wj3" path="res://units/placeholder/TestUnit.tscn" id="3_alqge"]
 [ext_resource type="PackedScene" uid="uid://wsij8tv1a8qh" path="res://models/placeholders/untitled.glb" id="4_d11gh"]
+[ext_resource type="PackedScene" uid="uid://bybfehgern4o" path="res://models/placeholders/townhall.glb" id="5_ce0xq"]
 
 [sub_resource type="Gradient" id="Gradient_uwh7s"]
 offsets = PackedFloat32Array(0)
@@ -53,7 +54,10 @@ mesh = SubResource("PlaneMesh_huf0m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50465, 0.247116, -1.07047)
 
 [node name="TestUnit2" parent="." instance=ExtResource("3_alqge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01797, 0.251304, -1.76188)
+transform = Transform3D(1, 0, 0, 0, 0.999956, 0.00937228, 0, -0.00937228, 0.999956, 0.81606, 0.0630611, -1.22021)
 
 [node name="untitled" parent="." instance=ExtResource("4_d11gh")]
-transform = Transform3D(0.927067, 0, 0, 0, 0.927067, 0, 0, 0, 0.927067, 5.922, 0, 1.66109)
+transform = Transform3D(0.927067, 0, 0, 0, 0.919854, 0.115422, 0, -0.115422, 0.919854, 8.13044, 0.0499268, 0.21624)
+
+[node name="townhall" parent="." instance=ExtResource("5_ce0xq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2257, -0.0172005, 6.06526)

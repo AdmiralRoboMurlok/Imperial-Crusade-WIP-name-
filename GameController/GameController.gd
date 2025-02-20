@@ -18,10 +18,15 @@ func _input(event: InputEvent) -> void:
 		DraggingSelectionBox = true
 	if Input.is_action_just_released("Select"):
 		DraggingSelectionBox = false
+		box.visible = false
 		SelectionBoxLogic()
 		
 func SelectionBoxLogic() -> void:
-	pass
+	for unit in VisableUnits.values():
+		if SelectionRect.abs().has_point(camera.Vector3ToVector2(unit.transform.origin)):
+			unit.set_selected(true)
+		else:
+			unit.set_selected(false)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,11 +53,12 @@ func init_ui() -> void:
 
 func _process(delta: float) -> void:
 	if DraggingSelectionBox:
+		SelectionRect.size = get_global_mouse_position() - SelectionRect.position
+		UpdateDragbox()
+		
 		if !box.visible:
 			if SelectionRect.size.length_squared() > MinimalDrag:
 				box.visible = true
-		else:
-			UpdateDragbox()
 			
 		SelectionRect.size = get_global_mouse_position() - SelectionRect.position
 	

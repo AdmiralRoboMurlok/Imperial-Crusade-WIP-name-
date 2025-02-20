@@ -1,4 +1,6 @@
 extends Node3D
+# Po co to tu jest? A tak się składa, że nie mam pojęcia 
+#Co jest zabawne bo sam to napisałem
 
 const RAY_LENGTH := 100
 

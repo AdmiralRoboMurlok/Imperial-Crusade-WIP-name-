@@ -1,4 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
 ::res://::1739304268
 icon.svg::CompressedTexture2D::661588098365190172::1735653424::1735653613::1::::<><>::
 README.md::TextFile::-1::1735654922::0::1::::<><>::
@@ -19,3 +20,32 @@ RaycastSytem.gd::GDScript::-1::1738869774::0::1::::<>Node3D<>::
 ::res://units/placeholder/::1739134109
 placeholder_unit_mv.gd::GDScript::-1::1738942294::0::1::::<>CharacterBody3D<>::
 TestUnit.tscn::PackedScene::4669223745115770622::1739134109::0::1::::<><>::uid://bpcvn3hvkgsjq::::res://models/placeholders/amongus.tres<>res://units/placeholder/placeholder_unit_mv.gd
+=======
+::res://::1740039519
+icon.svg::CompressedTexture2D::661588098365190172::1728629288::1739434822::1::::<><>::
+README.md::TextFile::-1::1735803125::0::1::::<><>::
+::res://Camera/::1739445135
+camera.gd::GDScript::-1::1739438337::0::1::::<>Node3D<>::
+camera.tscn::PackedScene::3759838451687463877::1739445135::0::1::::<><>::res://GameController/GameController.gd<>res://Camera/camera.gd<>uid://b7r2oyox04wj3::::res://units/placeholder/TestUnit.tscn<>uid://wsij8tv1a8qh::::res://models/placeholders/untitled.glb
+::res://GameController/::1739439163
+GameController.gd::GDScript::-1::1739439163::0::1::::<>Node2D<>::
+::res://GDExtension/::1728629407
+::res://models/::1739439267
+::res://models/faction1/::1736494678
+::res://models/placeholders/::1739443613
+amongus.glb::PackedScene::5889882921885450766::1736497177::1739434822::1::::<><>::
+amongus.tres::ArrayMesh::3444681848375764922::1739434837::0::1::::<><>::
+untitled.glb::PackedScene::1581816931307830187::1739439502::1739439520::1::::<><>::
+::res://models/raw_blender/::1739443620
+townhall.blend::PackedScene::8918566888763950699::1739443599::1739443620::1::::<><>::
+untitled.blend::PackedScene::6546750099462954982::1739438051::1739439267::1::::<><>::
+::res://RaycastSystem/::1739445135
+RaycastSytem.gd::GDScript::-1::1739445135::0::1::::<>Node3D<>::
+::res://texturs/::1739437113
+zielony.jpg::CompressedTexture2D::4472315845800698185::1739436895::1739437113::1::::<><>::
+::res://units/::1736497695
+::res://units/placeholder/::1739445135
+placeholder_unit_mv.gd::GDScript::-1::1739445135::0::1::::<>Node3D<>::
+TestUnit.tscn::PackedScene::4669223745115770622::1739445135::0::1::::<><>::uid://bpcvn3hvkgsjq::::res://models/placeholders/amongus.tres<>res://units/placeholder/placeholder_unit_mv.gd<>uid://b4yonhgh28wgn::::res://texturs/zielony.jpg
+::res://units/worker/::1736494061
+>>>>>>> af418ad66bfcdb59c922a7549715a143790c70f3

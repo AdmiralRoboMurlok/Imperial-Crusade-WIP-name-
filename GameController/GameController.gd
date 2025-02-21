@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	
 func UpdateDragbox() -> void:
 	box.size = abs(SelectionRect.size)
-	#Pozwala na odwracanie SelectBoxa
+	#Pozwals, by select box działał na wszystkich osiach
 	if SelectionRect.size.x < 0:
 		box.scale.x = -1
 	else:

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 D:/SteamLibrary/steamapps/common/Blender
+=======
+/var/lib/flatpak/app/org.blender.Blender/x86_64/stable/131499a72e5fd864f25b174cfcb5566166702896fae4069bfedefd1967ee6423/export/bin
+>>>>>>> ca508e569d2dddb71e9c1fd57f887b7e7e0590c6
 res://units/placeholder
 res://models/placeholders
 res://RaycastSystem

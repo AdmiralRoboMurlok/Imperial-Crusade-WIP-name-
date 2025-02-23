@@ -47,7 +47,7 @@ func remove_item(item_name: String, amount: int):
 		if inventory[item_name] <= 0:
 			inventory.erase(item_name)  # Remove item if amount reaches 0
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void: #This works like trash I hate this  
 	if Input.is_action_just_pressed("Move"):
 		var SpaceState = get_world_3d().direct_space_state
 		var Cam = get_viewport().get_camera_3d()

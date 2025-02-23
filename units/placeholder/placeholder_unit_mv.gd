@@ -15,7 +15,7 @@ func set_selected(selected: bool):
 	Selected = selected
 	$Sprite3D.visible = selected
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void: #This works like trash I hate this  
 	if Input.is_action_just_pressed("Move"):
 		var SpaceState = get_world_3d().direct_space_state
 		var Cam = get_viewport().get_camera_3d()

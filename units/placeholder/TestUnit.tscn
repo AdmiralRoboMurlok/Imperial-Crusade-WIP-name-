@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7r2oyox04wj3"]
 
 [ext_resource type="ArrayMesh" uid="uid://bpcvn3hvkgsjq" path="res://models/placeholders/amongus.tres" id="1_0jn3j"]
-[ext_resource type="Script" path="res://units/placeholder/placeholder_unit_mv.gd" id="1_cvvwp"]
+[ext_resource type="Script" path="res://units/placeholder/UnitBase.gd" id="1_cvvwp"]
 [ext_resource type="Texture2D" uid="uid://b4yonhgh28wgn" path="res://texturs/zielony.jpg" id="3_7bmr1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_an3ev"]

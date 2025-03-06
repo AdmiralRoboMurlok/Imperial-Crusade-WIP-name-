@@ -3,5 +3,4 @@
   - Add mining functionality
   - Concept art or any other concepts for factions
   - Napisanie dokumentacji technicznej
-  - Reorganizacje folderów ( low importance )
   - Make worker model ( least important )

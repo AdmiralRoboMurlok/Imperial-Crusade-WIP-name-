@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://GameController/GameController.gd" id="1_dt6uk"]
 [ext_resource type="Script" path="res://Camera/camera.gd" id="1_magah"]
-[ext_resource type="PackedScene" uid="uid://b7r2oyox04wj3" path="res://units/placeholder/TestUnit.tscn" id="3_alqge"]
-[ext_resource type="PackedScene" uid="uid://wsij8tv1a8qh" path="res://models/placeholders/untitled.glb" id="4_d11gh"]
-[ext_resource type="PackedScene" uid="uid://bybfehgern4o" path="res://models/placeholders/townhall.glb" id="5_ce0xq"]
-[ext_resource type="Script" path="res://units/worker/worker.gd" id="6_wlqyk"]
+[ext_resource type="PackedScene" uid="uid://b7r2oyox04wj3" path="res://PlaceholderFaction/units/placeholder/TestUnit.tscn" id="3_alqge"]
+[ext_resource type="PackedScene" uid="uid://wsij8tv1a8qh" path="res://resources/crystal/crystal.glb" id="4_d11gh"]
+[ext_resource type="PackedScene" uid="uid://bybfehgern4o" path="res://PlaceholderFaction/models/placeholders/townhall.glb" id="5_ce0xq"]
+[ext_resource type="Script" path="res://PlaceholderFaction/units/worker/worker.gd" id="6_wlqyk"]
+[ext_resource type="PackedScene" uid="uid://u8bmtsowx8lu" path="res://terrain/Terrain.tscn" id="7_fjqt0"]
 
 [sub_resource type="Gradient" id="Gradient_uwh7s"]
 offsets = PackedFloat32Array(0)
@@ -17,9 +18,6 @@ width = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ko1li"]
 size = Vector3(50, 1, 35)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_huf0m"]
-size = Vector2(20, 20)
 
 [node name="World" type="Node3D"]
 
@@ -44,12 +42,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.527, 17.4745)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerInterface/Camera/VisibleUnitsArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -7)
 shape = SubResource("BoxShape3D_ko1li")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["Map"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0933285, 0)
-mesh = SubResource("PlaneMesh_huf0m")
 
 [node name="TestUnit" parent="." instance=ExtResource("3_alqge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50465, 0.247116, -1.07047)
@@ -67,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2257, -0.0172005, 6.06526)
 transform = Transform3D(1, 0, 0, 0, 0.999824, 0.0187437, 0, -0.0187437, 0.999824, 1.63212, 0.114683, 3.27206)
 script = ExtResource("6_wlqyk")
 CarryingCrystal = false
+
+[node name="Terrain" parent="." instance=ExtResource("7_fjqt0")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -1, 0)

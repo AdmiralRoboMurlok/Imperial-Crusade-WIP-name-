@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7r2oyox04wj3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bpcvn3hvkgsjq" path="res://PlaceholderFaction/models/placeholders/amongus.tres" id="1_0jn3j"]
+[ext_resource type="Script" path="res://PlaceholderFaction/units/placeholder/UnitBase.gd" id="1_cvvwp"]
+[ext_resource type="Texture2D" uid="uid://b4yonhgh28wgn" path="res://texturs/zielony.jpg" id="3_7bmr1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an3ev"]
+size = Vector3(1.43274, 2.57199, 1.10962)
+
+[node name="TestUnit" type="Node3D"]
+script = ExtResource("1_cvvwp")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1.0253, 0, 0, 0, 1.0253, 0, 0, 0, 1.0253, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = ExtResource("1_0jn3j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18158, 1.23654, 0.0032959)
+shape = SubResource("BoxShape3D_an3ev")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.345504, 0, 0, 0, 0.345504, 0, 0, 0, 0.345504, 0, 0, 0)
+axis = 1
+texture = ExtResource("3_7bmr1")

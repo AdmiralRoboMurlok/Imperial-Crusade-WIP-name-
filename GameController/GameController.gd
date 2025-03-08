@@ -21,11 +21,11 @@ func _input(event: InputEvent) -> void:
 		box.visible = false
 		SelectionBoxLogic()
 		
-func SelectionBoxLogic() -> void:
+func SelectionBoxLogic() -> void: # Selection logic doesn't work we need to fix it -G
 	for unit in VisableUnits.values():
-		if SelectionRect.abs().has_point(camera.Vector3ToVector2(unit.transform.origin)):
+		if SelectionRect.abs().has_point(camera.Vector3ToVector2(unit.transform.origin)) and unit.is_in_group("units"):
 			unit.set_selected(true)
-		else:
+		elif unit.is_in_group("units"): # There is an error here -G
 			unit.set_selected(false)
 
 # Called when the node enters the scene tree for the first time.

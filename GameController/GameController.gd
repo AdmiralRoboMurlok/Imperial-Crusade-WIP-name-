@@ -19,13 +19,13 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("Select"):
 		DraggingSelectionBox = false
 		box.visible = false
-		SelectionBoxLogic()
+		SelectionBoxLogic() 
 		
-func SelectionBoxLogic() -> void: # Selection logic doesn't work we need to fix it -G
+func SelectionBoxLogic() -> void: 
 	for unit in VisableUnits.values():
 		if SelectionRect.abs().has_point(camera.Vector3ToVector2(unit.transform.origin)) and unit.is_in_group("units"):
 			unit.set_selected(true)
-		elif unit.is_in_group("units"): # There is an error here -G
+		elif unit.is_in_group("units"): 
 			unit.set_selected(false)
 
 # Called when the node enters the scene tree for the first time.

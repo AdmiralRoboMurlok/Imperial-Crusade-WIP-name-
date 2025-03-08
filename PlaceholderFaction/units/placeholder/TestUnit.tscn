@@ -12,8 +12,11 @@ script = ExtResource("1_cvvwp")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1.0253, 0, 0, 0, 1.0253, 0, 0, 0, 1.0253, 0, 0, 0)
+platform_floor_layers = 4294901762
+platform_wall_layers = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00835616, 0)
 mesh = ExtResource("1_0jn3j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -21,6 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18158, 1.23654, 0.0032959)
 shape = SubResource("BoxShape3D_an3ev")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.345504, 0, 0, 0, 0.345504, 0, 0, 0, 0.345504, 0, 0, 0)
+transform = Transform3D(0.345504, 0, 0, 0, 0.345504, 0, 0, 0, 0.345504, 0, 0.0398686, 0)
 axis = 1
 texture = ExtResource("3_7bmr1")

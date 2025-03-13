@@ -12,7 +12,7 @@ func HarvestingCrystal() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sprite3D.visible = false  
-	add_to_group("Units")
+	add_to_group("units")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

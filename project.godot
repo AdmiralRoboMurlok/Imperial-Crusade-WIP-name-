@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-RaycastSytem="*res://RaycastSystem/RaycastSytem.gd"
+RaycastSystem="*res://Systems/RaycastSystem.gd"
+NavigationSystem="*res://Systems/NavigationSystem.gd"
 
 [dotnet]
 

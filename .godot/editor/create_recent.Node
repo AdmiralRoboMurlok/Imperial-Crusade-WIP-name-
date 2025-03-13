@@ -1,7 +1,7 @@
+CharacterBody3D
 MeshInstance3D
 CollisionShape3D
 StaticBody3D
-CharacterBody3D
 Sprite3D
 Node3D
 Area3D

@@ -1,8 +1,5 @@
 extends Node3D
-class_name UnitBase
-
-# Signal emitted when a unit is selected (for UI updates)
-signal unit_selected(unit)
+#class_name UnitBase
 
 # Enum for different team alignments
 enum ALIGNMENT { PLAYER, ALLY, NEUTRAL, ENEMY }
@@ -20,8 +17,7 @@ var inventory: Dictionary = {}
 
 func _ready():
 	$Sprite3D.visible = false  # Hide selection marker initially
-	add_to_group("Units")  # Add unit to "Units" group
-
+	add_to_group("units")  # Add unit to "Units" group
 
 # Function to handle unit selection
 var MoveTarget = Vector3.ZERO;
@@ -30,11 +26,9 @@ var Velocity = Vector3.ZERO;
 func set_selected(selected: bool):
 	Selected = selected
 	$Sprite3D.visible = selected  # Show selection marker if selected
-	if selected:
-		unit_selected.emit(self)  # Notify UI to update inventory display
 
-func _input(event: InputEvent) -> void: # This works like trash I hate this  
-	# Update: This works even worse now, fuck this shit -G
+# We need to change the entire movement mechanics it works bad
+func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Move"):
 		var SpaceState = get_world_3d().direct_space_state
 		var Cam = get_viewport().get_camera_3d()
@@ -57,7 +51,7 @@ func _input(event: InputEvent) -> void: # This works like trash I hate this
 
 			if ground_result.has("position"):
 				MoveTarget = ground_result["position"]  # Ensure target is on the floor - Gerard
-
+				
 func _physics_process(delta: float) -> void:
 	if MoveTarget != Vector3.ZERO and Selected == true:
 		var direction = (MoveTarget - global_transform.origin).normalized()

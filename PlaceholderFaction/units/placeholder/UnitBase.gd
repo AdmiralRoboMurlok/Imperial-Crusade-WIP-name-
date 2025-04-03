@@ -8,6 +8,7 @@ enum ALIGNMENT { PLAYER, ALLY, NEUTRAL, ENEMY }
 # Basic unit properties
 const SPEED = 5.0
 var Selectable = true
+var Movable = true
 @onready var nav = get_parent()
 @export var Selected: bool = false
 @export_range(1, 12, 1) var Team: int = 1
@@ -33,7 +34,7 @@ var current_agent_path_index = 0
 func _physics_process(delta: float) -> void:
 #	if MoveTarget != Vector3.ZERO and Selected == true:
 #		move(delta)
-	if Input.is_action_just_pressed("Move"):
+	if Input.is_action_just_pressed("Move") and Selected == true and Movable == true:
 		var mouse_pos = RaycastSystem.get_mouse_world_position()
 		var from_pos = self.global_position
 		var to_pos = mouse_pos if mouse_pos else self.global_position

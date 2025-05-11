@@ -1,14 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-D:/SteamLibrary/steamapps/common/Blender
-=======
-=======
+res://resources/crystal
+res://Systems
 /home/gerard/imperial_crusade(wip-name)/Docs/
-res://units/worker
->>>>>>> 4dcb34ac8b89e06fd839c7bf087331e6bd198ca3
 /var/lib/flatpak/app/org.blender.Blender/x86_64/stable/131499a72e5fd864f25b174cfcb5566166702896fae4069bfedefd1967ee6423/export/bin
->>>>>>> ca508e569d2dddb71e9c1fd57f887b7e7e0590c6
-res://units/placeholder
-res://models/placeholders
-res://RaycastSystem
 res://Camera

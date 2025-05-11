@@ -1,5 +1,5 @@
 extends Node3D
-#class_name UnitBase
+class_name UnitBase
 
 # Enum for different team alignments
 enum ALIGNMENT { PLAYER, ALLY, NEUTRAL, ENEMY }
@@ -8,6 +8,7 @@ enum ALIGNMENT { PLAYER, ALLY, NEUTRAL, ENEMY }
 # Basic unit properties
 const SPEED = 5.0
 var Selectable = true
+var Movable = true
 @onready var nav = get_parent()
 @export var Selected: bool = false
 @export_range(1, 12, 1) var Team: int = 1
@@ -27,51 +28,38 @@ func set_selected(selected: bool):
 	Selected = selected
 	$Sprite3D.visible = selected  # Show selection marker if selected
 
-# We need to change the entire movement mechanics it works bad
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Move"):
-		var SpaceState = get_world_3d().direct_space_state
-		var Cam = get_viewport().get_camera_3d()
-		var MousePos = get_viewport().get_mouse_position()
-		
-		var origin = Cam.project_ray_origin(MousePos)
-		var end = origin + Cam.project_ray_normal(MousePos) * 100
-		var query = PhysicsRayQueryParameters3D.create(origin, end)
-		query.collide_with_areas = true
-		
-		var result = SpaceState.intersect_ray(query)
-		
-		if result.has("position"):
-			# Perform a downward raycast to find the floor - Gerard
-			var ground_query = PhysicsRayQueryParameters3D.create(
-				result["position"] + Vector3(0, 1, 0), 
-				result["position"] + Vector3(0, -10, 0)
-			)
-			var ground_result = SpaceState.intersect_ray(ground_query)
+var current_agent_path = []
+var current_agent_path_index = 0
 
-			if ground_result.has("position"):
-				MoveTarget = ground_result["position"]  # Ensure target is on the floor - Gerard
-				
 func _physics_process(delta: float) -> void:
-	if MoveTarget != Vector3.ZERO and Selected == true:
-		var direction = (MoveTarget - global_transform.origin).normalized()
-		Velocity = direction * SPEED
+#	if MoveTarget != Vector3.ZERO and Selected == true:
+#		move(delta)
+	if Input.is_action_just_pressed("Move") and Selected == true and Movable == true:
+		var mouse_pos = RaycastSystem.get_mouse_world_position()
+		var from_pos = self.global_position
+		var to_pos = mouse_pos if mouse_pos else self.global_position
+		var path = NavigationSystem.get_shortest_path(from_pos, to_pos)
 		
-		global_translate(Velocity * delta)
+		if not path.is_empty():
+			current_agent_path = path
+			current_agent_path_index = 0
+	
+	if current_agent_path.size() > 0 and current_agent_path_index < current_agent_path.size():
+		var target_pos = current_agent_path[current_agent_path_index]
+		var direction = (target_pos - self.global_position).normalized()
+		var distance = self.global_position.distance_to(target_pos)
 		
-		var space_state = get_world_3d().direct_space_state
-		var ground_check = PhysicsRayQueryParameters3D.create(
-			global_transform.origin + Vector3(0, 1, 0),
-			global_transform.origin + Vector3(0, -10, 0)
-		)
-		var ground_result = space_state.intersect_ray(ground_check)
+		self.look_at(target_pos)
+		self.global_position += direction * min(distance, delta * 32)
 		
-		if ground_result.has("position"):
-			global_transform.origin.y = ground_result["position"].y
-		
-		if global_transform.origin.distance_to(MoveTarget) < 0.1:
-			MoveTarget = Vector3.ZERO
-			Velocity = Vector3.ZERO
+		if distance < 0.5:
+			current_agent_path_index = 1
+
+	if current_agent_path_index >= current_agent_path.size():
+		current_agent_path.clear()
+			
+	#if current_agent_path.is_empty():
+		#velocity = Vector3(0, 0, 0)
 
 # Function to detect when the unit is clicked
 func _on_input_event(_camera, event, _position, _normal, _shape_idx):

@@ -3,3 +3,4 @@
   - Concept art or any other concepts for factions
   - Write technical documentation
   - Make worker model ( least important )
+  - Change the crystal to mine

@@ -1,5 +1,7 @@
 extends Node
 
+@export var Crystals: int = 0 
+@export var Wood: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

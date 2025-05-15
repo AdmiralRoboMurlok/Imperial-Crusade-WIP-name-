@@ -10,13 +10,14 @@ crystal.gd::GDScript::-1::1746992373::0::1::::<>Node3D<>::
 crystal.glb::PackedScene::1581816931307830187::1741461482::1746997227::1::::<><>::
 ::res://Camera/::1746997739
 camera.gd::GDScript::-1::1740163868::0::1::::<>Node3D<>::
-camera.tscn::PackedScene::3759838451687463877::1746997739::0::1::::<><>::res://GameController/GameController.gd<>res://Camera/camera.gd<>uid://b7r2oyox04wj3::::res://Factions/PlaceholderFaction/units/placeholder/TestUnit.tscn<>uid://wsij8tv1a8qh::::res://archive/CrystalOld/crystal.glb<>res://archive/CrystalOld/crystal.gd<>uid://bybfehgern4o::::res://Factions/PlaceholderFaction/models/placeholders/townhall.glb<>res://Factions/PlaceholderFaction/units/worker/worker.gd<>uid://u8bmtsowx8lu::::res://terrain/Terrain.tscn
+camera.tscn::PackedScene::3759838451687463877::1746997932::0::1::::<><>::res://GameController/GameController.gd<>res://Camera/camera.gd<>uid://b7r2oyox04wj3::::res://Factions/PlaceholderFaction/units/placeholder/TestUnit.tscn<>uid://wsij8tv1a8qh::::res://archive/CrystalOld/crystal.glb<>res://archive/CrystalOld/crystal.gd<>uid://bybfehgern4o::::res://Factions/PlaceholderFaction/models/placeholders/townhall.glb<>res://Factions/PlaceholderFaction/units/worker/worker.gd<>uid://u8bmtsowx8lu::::res://terrain/Terrain.tscn
 ::res://Docs/::1741461482
 TechnicalDocs.md::TextFile::-1::1741461482::0::1::::<><>::
 ::res://Factions/::1746997764
-::res://Factions/FelHand/::1746997769
+::res://Factions/FelHand/::1746997796
 ::res://Factions/FelHand/Plans/::1746997788
 plan.md::TextFile::-1::1746997781::0::1::::<><>::
+::res://Factions/FelHand/units/::1746997796
 ::res://Factions/PlaceholderFaction/::1741461482
 ::res://Factions/PlaceholderFaction/buildings/::1741461482
 townhall.gd::GDScript::-1::1741461482::0::1::::<>Node<>::
@@ -29,7 +30,7 @@ townhall.glb::PackedScene::119803776883431524::1741461482::1746997740::1::::<><>
 townhall.blend::PackedScene::8918566888763950699::1741461482::1746997741::1::::<><>::
 ::res://Factions/PlaceholderFaction/units/::1741461482
 ::res://Factions/PlaceholderFaction/units/placeholder/::1746997739
-TestUnit.tscn::PackedScene::4669223745115770622::1746997739::0::1::::<><>::uid://bpcvn3hvkgsjq::::res://Factions/PlaceholderFaction/models/placeholders/amongus.tres<>res://Factions/PlaceholderFaction/units/placeholder/UnitBase.gd<>uid://b4yonhgh28wgn::::res://texturs/zielony.jpg
+TestUnit.tscn::PackedScene::4669223745115770622::1746997932::0::1::::<><>::uid://bpcvn3hvkgsjq::::res://Factions/PlaceholderFaction/models/placeholders/amongus.tres<>res://Factions/PlaceholderFaction/units/placeholder/UnitBase.gd<>uid://b4yonhgh28wgn::::res://texturs/zielony.jpg
 UnitBase.gd::GDScript::-1::1746992373::0::1::::UnitBase<>Node3D<>::
 ::res://Factions/PlaceholderFaction/units/worker/::1746997495
 worker.gd::GDScript::-1::1746997494::0::1::::<>UnitBase<>::

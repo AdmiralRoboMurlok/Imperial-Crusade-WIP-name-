@@ -19,6 +19,7 @@ func Mining() -> void: # This function activates when you press right click on m
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	super()
 	$Sprite3D.visible = false  
 	add_to_group("units")
 
@@ -28,6 +29,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	super(delta)
 	if Input.is_action_just_pressed("Move") and self in get_tree().get_nodes_in_group("units"):
 		var target = RaycastSystem.get_raycast_hit_object(0b00000000_00000000_00000000_00001000)
 		if target:

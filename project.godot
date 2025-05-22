@@ -28,6 +28,7 @@ project/assembly_name="Imperial_Crusade(WIP name)"
 
 units="Wszystkie jednostki które można kliknąć"
 Terrain="Mapy"
+resources="wszystkie zasoby"
 
 [input]
 

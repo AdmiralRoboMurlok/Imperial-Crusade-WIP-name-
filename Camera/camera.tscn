@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bttj8wof67wkj"]
+[gd_scene load_steps=11 format=3 uid="uid://bttj8wof67wkj"]
 
 [ext_resource type="Script" path="res://GameController/GameController.gd" id="1_dt6uk"]
 [ext_resource type="Script" path="res://Camera/camera.gd" id="1_magah"]
 [ext_resource type="PackedScene" uid="uid://b7r2oyox04wj3" path="res://Factions/PlaceholderFaction/units/UnitBase/TestUnit.tscn" id="3_alqge"]
-[ext_resource type="PackedScene" uid="uid://wsij8tv1a8qh" path="res://archive/CrystalOld/crystal.glb" id="4_d11gh"]
-[ext_resource type="Script" path="res://archive/CrystalOld/crystal.gd" id="4_ftiab"]
 [ext_resource type="PackedScene" uid="uid://bybfehgern4o" path="res://Factions/PlaceholderFaction/models/placeholders/townhall.glb" id="5_ce0xq"]
 [ext_resource type="Script" path="res://Factions/PlaceholderFaction/units/worker/worker.gd" id="6_wlqyk"]
 [ext_resource type="PackedScene" uid="uid://u8bmtsowx8lu" path="res://terrain/Terrain.tscn" id="7_fjqt0"]
+[ext_resource type="PackedScene" uid="uid://ckaccx7gr35ev" path="res://resources/mine/mine.tscn" id="7_s8m6e"]
 
 [sub_resource type="Gradient" id="Gradient_uwh7s"]
 offsets = PackedFloat32Array(0)
@@ -50,10 +49,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -7)
 shape = SubResource("BoxShape3D_ko1li")
 
-[node name="Crystal" parent="." instance=ExtResource("4_d11gh")]
-transform = Transform3D(0.927067, 0, 0, 0, 0.919854, 0.115422, 0, -0.115422, 0.919854, 8.13044, 0.0499268, 0.21624)
-script = ExtResource("4_ftiab")
-
 [node name="Townhall" parent="." instance=ExtResource("5_ce0xq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2257, -0.0172005, 6.06526)
 
@@ -64,3 +59,6 @@ CarryingCrystal = false
 
 [node name="Terrain" parent="." instance=ExtResource("7_fjqt0")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -1.15214, 0)
+
+[node name="Mine" parent="." groups=["resources"] instance=ExtResource("7_s8m6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42696, 0, -2.6721)

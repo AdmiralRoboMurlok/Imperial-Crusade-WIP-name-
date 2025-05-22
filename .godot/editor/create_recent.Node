@@ -1,9 +1,9 @@
-CollisionShape3D
 MeshInstance3D
+Sprite3D
+CollisionShape3D
 CharacterBody3D
 Node3D
 StaticBody3D
-Sprite3D
 Area3D
 NinePatchRect
 Node2D

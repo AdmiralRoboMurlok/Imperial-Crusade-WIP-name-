@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://cffiequ87pqyj"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_0x38g"]
+[ext_resource type="Texture2D" uid="uid://dg2bw1npt1bkn" path="res://texturs/Johnston-Clash-Clans.webp" id="2_s0rkc"]
+
+[sub_resource type="SystemFont" id="SystemFont_ntcc8"]
+font_names = PackedStringArray("JetBrains Mono")
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0x38g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -508.0
+offset_top = -378.0
+offset_right = 340.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s0rkc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 11.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = SubResource("SystemFont_ntcc8")
+theme_override_font_sizes/font_size = 60
+text = "GERARD GAME DELUXE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "START GAME"
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "END GAME"

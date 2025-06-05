@@ -23,7 +23,6 @@ func _ready() -> void:
 	$Sprite3D.visible = false  
 	add_to_group("units")
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
